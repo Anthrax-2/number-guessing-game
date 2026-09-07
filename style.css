@@ -28,15 +28,18 @@ label {
     padding: 0 10px 0 0;
 }
 
-input {
+#number {
+    outline: none;
+}
+
+#number,
+#enter {
     border: none;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 7px;
     color: #292929;
-    outline: none;
     font-weight: bold;
-    color: #292929;
 }
 
 input::-webkit-inner-spin-button,
