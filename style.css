@@ -32,6 +32,10 @@ label {
     outline: none;
 }
 
+#enter {
+    cursor: pointer;
+}
+
 #number,
 #enter {
     border: none;
