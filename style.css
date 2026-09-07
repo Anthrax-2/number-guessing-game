@@ -42,9 +42,12 @@ select {
     padding: 5px;
     font-weight: bold;
     outline: none;
+    color: #292929;
+    font-family: inherit;
 }
 
 option {
     font-family: inherit;
     font-weight: inherit;
+    color: inherit
 }
