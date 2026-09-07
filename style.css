@@ -15,7 +15,7 @@ body {
     align-items: center;
 }
 
-.content {
+.input {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
