@@ -18,7 +18,12 @@ selectField.addEventListener("change", (event) => {
     numberOfRounds = Number(roundsPerDifficulty[pickedDifficulty])
 })
 
-
+function validateGuess(guess) {
+    if (1 <= guess && 100 >= guess) {
+        return true
+    }
+    return false
+}
 
 
 
