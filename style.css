@@ -10,14 +10,18 @@ body {
     background-color: #292929;
     color: #ffffff;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    
 }
 
 input {
