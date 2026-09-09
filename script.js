@@ -27,3 +27,9 @@ function validateGuess(guess) {
     return false
 }
 
+function checkGuess(guess, answer) {
+    if (guess === answer) {
+        return true
+    }
+    return false
+}
