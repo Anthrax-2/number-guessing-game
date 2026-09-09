@@ -1,16 +1,18 @@
 "use strict"
 
-
 const selectField = document.querySelector("#difficulty")
 const inputField = document.querySelector("#number")
 const outputField = document.querySelector("#output")
 
-const roundsPerDifficulty = {"1": "10", "2": "5", "3": "2"}
+const enterBtn = document.querySelector("#enter")
+const restartBtn = document.querySelector("#restart")
 
-const randomNumber = Math.floor(Math.random() * (1 + 100))
+const roundsPerDifficulty = { 1: "10", 2: "5", 3: "2" }
+
+let randomNumber = Math.floor(Math.random() * (1 + 100))
 
 let pickedDifficulty = null
-let numberOfRounds = null 
+let numberOfRounds = 10
 
 selectField.addEventListener("change", (event) => {
     event.preventDefault()
@@ -24,6 +26,4 @@ function validateGuess(guess) {
     }
     return false
 }
-
-
 
