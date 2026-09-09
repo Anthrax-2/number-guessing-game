@@ -84,3 +84,7 @@ function restart() {
     randomNumber = Math.floor(Math.random() * (1 + 100))
     outputField.textContent = ""
 }
+
+restartBtn.addEventListener("click", () => {
+    restart()
+})
