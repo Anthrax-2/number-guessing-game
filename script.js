@@ -33,3 +33,18 @@ function checkGuess(guess, answer) {
     }
     return false
 }
+
+function showResult(guess, answer) {
+    if (checkGuess(guess, answer)) {
+        outputField.style.color = "green"
+        outputField.textContent = "Correct!"
+    } else if (!checkGuess(guess, answer)) {
+        if (guess > answer) {
+            outputField.style.color = "red"
+            outputField.textContent = "Lower"
+        } else {
+            outputField.style.color = "red"
+            outputField.textContent = "Higher"
+        }
+    }
+}
