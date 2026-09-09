@@ -38,6 +38,7 @@ function showResult(guess, answer) {
     if (checkGuess(guess, answer)) {
         outputField.style.color = "green"
         outputField.textContent = "Correct!"
+        toggleRestart()
     } else if (!checkGuess(guess, answer)) {
         if (guess > answer) {
             outputField.style.color = "red"
@@ -65,8 +66,9 @@ enterBtn.addEventListener("click", () => {
 
     if (currentRound === numberOfRounds) {
         outputField.textContent = `You ran out of guesses, the answer was ${randomNumber}`
-        btn.disabled = true
+        enterBtn.disabled = true
         inputField.disabled = true
+        toggleRestart()
     }
 
 })
@@ -83,8 +85,13 @@ function restart() {
     numberOfRounds = 10
     randomNumber = Math.floor(Math.random() * (1 + 100))
     outputField.textContent = ""
+    toggleRestart()
 }
 
 restartBtn.addEventListener("click", () => {
     restart()
 })
+
+function toggleRestart() {
+    restartBtn.classList.toggle("hide")
+}
