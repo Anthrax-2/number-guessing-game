@@ -48,3 +48,25 @@ function showResult(guess, answer) {
         }
     }
 }
+
+let currentRound = 0
+let currentGuess = null
+
+enterBtn.addEventListener("click", () => {
+    if (!validateGuess(inputField.value)) {
+        outputField.style.color = "yellow"
+        outputField.textContent = "Guess must between 1 and 100"
+    } else {
+        currentRound++
+        selectField.disabled = true
+        currentGuess = Number(inputField.value)
+        showResult(currentGuess, randomNumber)
+    }
+
+    if (currentRound === numberOfRounds) {
+        outputField.textContent = `You ran out of guesses, the answer was ${randomNumber}`
+        btn.disabled = true
+        inputField.disabled = true
+    }
+
+})
