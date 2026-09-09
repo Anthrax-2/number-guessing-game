@@ -70,3 +70,17 @@ enterBtn.addEventListener("click", () => {
     }
 
 })
+
+function restart() {
+    inputField.value = ""
+    selectField.value = "1"
+    selectField.disabled = false
+    enterBtn.disabled = false
+    inputField.disabled = false
+    currentRound = 0
+    currentGuess = null
+    pickedDifficulty = null
+    numberOfRounds = 10
+    randomNumber = Math.floor(Math.random() * (1 + 100))
+    outputField.textContent = ""
+}
