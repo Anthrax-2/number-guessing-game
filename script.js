@@ -7,9 +7,9 @@ const outputField = document.querySelector("#output")
 const enterBtn = document.querySelector("#enter")
 const restartBtn = document.querySelector("#restart")
 
-const roundsPerDifficulty = { 1: "10", 2: "5", 3: "2" }
+const roundsPerDifficulty = { 1: "10", 2: "5", 3: "3" }
 
-let randomNumber = Math.floor(Math.random() * (1 + 100))
+let randomNumber = Math.floor(Math.random() * 100) + 1
 
 let pickedDifficulty = null
 let numberOfRounds = 10
@@ -39,7 +39,7 @@ function showResult(guess, answer) {
         outputField.style.color = "green"
         outputField.textContent = "Correct!"
         toggleRestart()
-    } else if (!checkGuess(guess, answer)) {
+    } else {
         if (guess > answer) {
             outputField.style.color = "red"
             outputField.textContent = "Lower"
@@ -58,19 +58,18 @@ enterBtn.addEventListener("click", () => {
         outputField.style.color = "yellow"
         outputField.textContent = "Guess must between 1 and 100"
     } else {
-        currentRound++
         selectField.disabled = true
         currentGuess = Number(inputField.value)
+        currentRound++
         showResult(currentGuess, randomNumber)
     }
 
-    if (currentRound === numberOfRounds) {
+    if (currentRound === numberOfRounds && !checkGuess(currentGuess, randomNumber)) {
         outputField.textContent = `You ran out of guesses, the answer was ${randomNumber}`
         enterBtn.disabled = true
         inputField.disabled = true
         toggleRestart()
     }
-
 })
 
 function restart() {
@@ -83,7 +82,7 @@ function restart() {
     currentGuess = null
     pickedDifficulty = null
     numberOfRounds = 10
-    randomNumber = Math.floor(Math.random() * (1 + 100))
+    randomNumber = Math.floor(Math.random() * 100) + 1
     outputField.textContent = ""
     toggleRestart()
 }
